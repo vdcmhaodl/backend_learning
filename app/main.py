@@ -32,3 +32,10 @@ def predict(request: PredictionRequest) -> PredictionRespone:
     )
     
     return PredictionRespone(score=score)
+
+@app.get("/info")
+def info() -> dict[str, str]:
+    return {
+        "name": "Student Score Predictor",
+        "version": "1.0.0"
+    }
