@@ -1,13 +1,14 @@
 from app.predictor import predict_score
 
 def main() -> None:
-    study_hours = float(input("Study hours:"))
-    sleep_hours = float(input("Sleep hours:"))
-    
+    study_hours = float(input("Study hours: "))
+    sleep_hours = float(input("Sleep hours: "))
+    exercise_hours = float(input("Exercise hours: "))
     try:
         score = predict_score(
             study_hours=study_hours,
             sleep_hours=sleep_hours,
+            exercise_hours=exercise_hours,
         )
     except ValueError as error:
         print(f"Error: {error}")
